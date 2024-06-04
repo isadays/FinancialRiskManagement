@@ -25,3 +25,11 @@ print(var)
 #at the 95% confidence level? 
 HFvar <- 1000*(exp(var)-1) # in millions of dollars
 print(HFvar)
+
+
+#Estimating ES (cVaR) of the normal distribution
+
+es <- mu-sig*dnorm(qnorm(0.05,mean=0,sd=1),mean=0,sd=1)/0.05
+HFvares <- 1000*(exp(es)-1) # in millions of dollars 
+print(es)
+print(HFvares)
